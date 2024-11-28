@@ -14,7 +14,7 @@
     "settings": {
         "import/resolver": {
             "node": {
-                "extensions": [".js", ".ts"]
+                "extensions": [".js", ".ts", ".mjs"]
             },
             "typescript": {
                 "project": "./tsconfig.json"
@@ -39,6 +39,60 @@
                 "ignore": [
                     "astro:content"
                 ]
+            }
+        ],
+        "func-names": "error",
+        "curly": ["error", "all"],
+        "import/order": [
+            "error",
+            {
+                "newlines-between": "never"
+            }
+        ],
+        "no-irregular-whitespace": [
+            "error",
+            {
+                "skipComments": false,
+                "skipRegExps": false,
+                "skipStrings": false,
+                "skipTemplates": false
+            }
+        ],
+        "no-plusplus": [
+            "error",
+            {
+                "allowForLoopAfterthoughts": true
+            }
+        ],
+        "no-use-before-define": [
+            "error",
+            {
+                "classes": true,
+                "functions": false,
+                "variables": true
+            }
+        ],
+        "padding-line-between-statements": [
+            "error",
+            {
+                "blankLine": "always",
+                "next": "return",
+                "prev": "*"
+            },
+            {
+                "blankLine": "any",
+                "next": "return",
+                "prev": ["block-like", "const", "let", "var"]
+            },
+            {
+                "blankLine": "always",
+                "next": "export",
+                "prev": "*"
+            },
+            {
+                "blankLine": "any",
+                "next": "export",
+                "prev": "export"
             }
         ]
     }
