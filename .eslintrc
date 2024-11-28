@@ -4,7 +4,8 @@
         "node": true
     },
     "plugins": [
-        "prettier"
+        "prettier",
+        "import"
     ],
     "extends": [
         "airbnb",
@@ -13,7 +14,10 @@
     "settings": {
         "import/resolver": {
             "node": {
-                "extensions": ["js", "ts"]
+                "extensions": [".js", ".ts"]
+            },
+            "typescript": {
+                "project": "./tsconfig.json"
             }
         }
     },
@@ -28,6 +32,14 @@
             }
         ],
         "import/prefer-default-export": "off",
-        "import/extensions": "off"
+        "import/extensions": "off",
+        "import/no-unresolved": [
+            "error",
+            {
+                "ignore": [
+                    "astro:content"
+                ]
+            }
+        ]
     }
 }
