@@ -5,11 +5,13 @@
     },
     "plugins": [
         "prettier",
-        "import"
+        "import",
+        "perfectionist"
     ],
     "extends": [
         "airbnb",
-        "prettier"
+        "prettier",
+        "plugin:perfectionist/recommended-natural-legacy"
     ],
     "settings": {
         "import/resolver": {
@@ -94,6 +96,7 @@
                 "next": "export",
                 "prev": "export"
             }
-        ]
+        ],
+        "perfectionist/sort-imports": "off"
     }
 }
