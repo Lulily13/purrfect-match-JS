@@ -1,0 +1,102 @@
+{
+    "env": {
+        "browser": true,
+        "node": true
+    },
+    "plugins": [
+        "prettier",
+        "import",
+        "perfectionist"
+    ],
+    "extends": [
+        "airbnb",
+        "prettier",
+        "plugin:perfectionist/recommended-natural-legacy"
+    ],
+    "settings": {
+        "import/resolver": {
+            "node": {
+                "extensions": [".js", ".ts", ".mjs"]
+            },
+            "typescript": {
+                "project": "./tsconfig.json"
+            }
+        }
+    },
+    "rules": {
+        "prettier/prettier": [
+            "error",
+            {
+                "printWidth": 120,
+                "singleQuote": true,
+                "tabWidth": 4,
+                "trailingComma": "es5"
+            }
+        ],
+        "import/prefer-default-export": "off",
+        "import/extensions": "off",
+        "import/no-unresolved": [
+            "error",
+            {
+                "ignore": [
+                    "astro:content"
+                ]
+            }
+        ],
+        "func-names": "error",
+        "curly": ["error", "all"],
+        "import/order": [
+            "error",
+            {
+                "newlines-between": "never"
+            }
+        ],
+        "no-irregular-whitespace": [
+            "error",
+            {
+                "skipComments": false,
+                "skipRegExps": false,
+                "skipStrings": false,
+                "skipTemplates": false
+            }
+        ],
+        "no-plusplus": [
+            "error",
+            {
+                "allowForLoopAfterthoughts": true
+            }
+        ],
+        "no-use-before-define": [
+            "error",
+            {
+                "classes": true,
+                "functions": false,
+                "variables": true
+            }
+        ],
+        "padding-line-between-statements": [
+            "error",
+            {
+                "blankLine": "always",
+                "next": "return",
+                "prev": "*"
+            },
+            {
+                "blankLine": "any",
+                "next": "return",
+                "prev": ["block-like", "const", "let", "var"]
+            },
+            {
+                "blankLine": "always",
+                "next": "export",
+                "prev": "*"
+            },
+            {
+                "blankLine": "any",
+                "next": "export",
+                "prev": "export"
+            }
+        ],
+        "perfectionist/sort-imports": "off"
+    }
+}
