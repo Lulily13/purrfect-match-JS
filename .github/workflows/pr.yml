@@ -11,8 +11,9 @@ permissions:
 
 jobs:
     validate_pr_title:
-        runs-on: [ubuntu-latest]
         name: Validate PR title
+        runs-on: [ubuntu-latest]
+        timeout-minutes: 15
         steps:
             - uses: actions/checkout@v4
             - name: Set correct node version
@@ -28,3 +29,21 @@ jobs:
                 PR_TITLE: ${{ github.event.pull_request.title }}
               run: echo "$PR_TITLE" | npx commitlint
               shell: bash
+
+    npm:
+        name: NPM audit
+        runs-on: [ubuntu-latest]
+        timeout-minutes: 15
+        steps:
+            - uses: actions/checkout@v4
+            - name: Set correct node version
+              uses: actions/setup-node@v4
+              with:
+                node-version-file: package.json
+                cache: 'npm'
+            - name: NPM Audit
+              run: npm audit --omit=dev --audit-level=high
+
+    validate:
+        name: Validate
+        uses: ./.github/workflows/validate.yml
