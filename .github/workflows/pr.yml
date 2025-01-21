@@ -1,0 +1,30 @@
+name: PR
+
+on:
+    workflow_dispatch:
+    pull_request:
+
+permissions:
+    id-token: write
+    contents: read
+    pull-requests: write
+
+jobs:
+    validate_pr_title:
+        runs-on: [ubuntu-latest]
+        name: Validate PR title
+        steps:
+            - uses: actions/checkout@v4
+            - name: Set correct node version
+              uses: actions/setup-node@v4
+              with:
+                node-version-file: package.json
+                cache: 'npm'
+            - name: Install dependencies
+              run: npm ci --quiet --no-audit --no-fund
+              shell: bash
+            - name: Validate PR title
+              env:
+                PR_TITLE: ${{ github.event.pull_request.title }}
+              run: echo "$PR_TITLE" | npx commitlint
+              shell: bash
