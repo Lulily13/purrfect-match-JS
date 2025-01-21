@@ -11,7 +11,8 @@
     "extends": [
         "airbnb",
         "prettier",
-        "plugin:perfectionist/recommended-natural-legacy"
+        "plugin:perfectionist/recommended-natural-legacy",
+        "plugin:astro/recommended"
     ],
     "settings": {
         "import/resolver": {
@@ -23,6 +24,23 @@
             }
         }
     },
+    "overrides": [
+        {
+            "files": ["*.astro"],
+            "parser": "astro-eslint-parser",
+            "parserOptions": {
+                "parser": "@typescript-eslint/parser",
+                "extraFileExtensions": [".astro"]
+            },
+            "rules": {
+                "astro/no-conflict-set-directives": "error",
+                "astro/no-unused-define-vars-in-style": "error",
+                "react/no-unknown-property": "off",
+                "react/jsx-props-no-spreading": "warn",
+                "react/self-closing-comp": "off"
+            }
+        }
+    ],
     "rules": {
         "prettier/prettier": [
             "error",
@@ -97,6 +115,8 @@
                 "prev": "export"
             }
         ],
-        "perfectionist/sort-imports": "off"
+        "perfectionist/sort-imports": "off",
+        "react/react-in-jsx-scope": "off",
+        "react/jsx-filename-extension": "off"
     }
 }
