@@ -1,0 +1,26 @@
+name: Validate
+
+on:
+    workflow_call:
+
+env:
+    TZ: Europe/Warsaw
+
+jobs:
+    linters:
+        name: Run linters
+        runs-on: [ubuntu-latest]
+        timeout-minutes: 15
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v4
+            - name: Set correct node version
+              uses: actions/setup-node@v4
+              with:
+                node-version-file: package.json
+                cache: 'npm'
+            - name: Install dependencies
+              run: npm ci --quiet --no-audit --no-fund
+              shell: bash
+            - name: Lint
+              run: npm run lint

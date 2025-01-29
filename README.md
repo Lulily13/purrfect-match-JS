@@ -1,3 +1,3 @@
 # Hello
 
-Start with https://github.com/Lulily13/purrfect-match-JS/issues/1 which will most likely replace this README.md file.
+![Validate](https://github.com/Lulily13/purrfect-match-JS/actions/workflows/main.yml/badge.svg)
