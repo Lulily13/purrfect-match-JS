@@ -57,7 +57,8 @@
             "error",
             {
                 "ignore": [
-                    "astro:content"
+                    "astro:content",
+                    "astro:assets"
                 ]
             }
         ],
