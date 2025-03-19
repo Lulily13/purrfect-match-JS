@@ -1,0 +1,38 @@
+.opening-section {
+    max-width: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 0 auto;
+}
+
+.opening-text-contener {
+    max-width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.main-img {
+        width: 100px;
+        height: 100px;
+        object-fit: contain;
+        max-width: 100%;
+        max-height: 100%;
+}
+
+.button {
+    max-width: 400px;
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    background-color: var(--secondary);
+    padding: 20px;
+    border-radius: 40px;
+    box-shadow: 5px 10px 14px #07ace629;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

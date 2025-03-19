@@ -1,0 +1,23 @@
+---
+import Header from '../../components/Header.astro';
+import BaseHead from '../../components/BaseHead.astro';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../../consts';
+import Footer from '../../components/Footer.astro';
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <BaseHead description={SITE_DESCRIPTION} title={SITE_TITLE} />
+    </head>
+    <body>
+        <Header />
+        <main>
+            <section>
+                <h1>Jak pomóc</h1>
+                <p>Mozesz wesprzec nas finansowo</p>
+            </section>
+        </main>
+        <Footer />
+    </body>
+</html>
