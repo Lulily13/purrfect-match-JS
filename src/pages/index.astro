@@ -14,18 +14,24 @@ import styles from './index.module.scss';
     <body>
         <Header />
         <main>
-            <section className="opening-section">
-                <div className="opening-text-contener">
-                    <h1>Adoptuj zwierzaka</h1>
-                    <p>
+            <section class="opening-section">
+                <div class="opening-text-contener">
+                    <h1>Adoptuj <span class="highlight">zwierzaka</span></h1>
+                    <p class="opening-description">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras finibus vulputate lacinia. Cras
                         vehicula mi nunc, non pretium libero luctus ut. Donec metus turpis, luctus non lectus eu,
                         dapibus laoreet augue. Mauris porta eleifend enim ac bibendum. Suspendisse imperdiet velit vel
                         quam auctor, sed
                     </p>
-                    <a className={styles.button} href="/dog">Zobacz wszystkich podopiecznych</a>
+                    <a class={styles.button} href="/dog">Zobacz wszystkich podopiecznych</a>
                 </div>
-                <img alt="Main Page Cat" className="main-img" src="src/assets/images/mainPageImg.png" />
+                <img
+                    alt="Main Page Cat"
+                    class="main-img"
+                    height="400px"
+                    src="src/assets/images/mainPageImg.png"
+                    width="400px"
+                />
             </section>
         </main>
         <Footer />

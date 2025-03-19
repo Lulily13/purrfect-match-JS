@@ -1,38 +1,66 @@
+$primary: #F9B7A2;
+$secondary: #9893DA;
+
+h1 > span {
+    color: $secondary;
+}
+
 .opening-section {
-    max-width: 50vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    margin: 0 auto;
+
 }
 
 .opening-text-contener {
-    max-width: 400px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+    max-width: 30vw;
 }
 
-.main-img {
-        width: 100px;
-        height: 100px;
-        object-fit: contain;
-        max-width: 100%;
-        max-height: 100%;
+.opening-description {
+    max-width: 25vw;
 }
 
 .button {
-    max-width: 400px;
+    max-width: 300px;
     text-decoration: none;
     color: white;
     font-weight: 600;
-    background-color: var(--secondary);
-    padding: 20px;
+    background: $secondary;
+    padding: 15px 25px;
     border-radius: 40px;
-    box-shadow: 5px 10px 14px #07ace629;
+    box-shadow: 5px 10px 14px rgba(7, 172, 230, 0.2);
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+        transform: scale(1.05);
+        color: white;
+    }
+}
+
+.main-img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    position: relative;
+    z-index: 5;
+}
+
+@media (max-width: 768px) {
+    .opening-section {
+        flex-direction: column;
+        text-align: center;
+        max-width: 90vw;
+    }
+
+    .opening-text-contener {
+        max-width: 90%;
+    }
+
+    .button {
+        max-width: 80%;
+    }
+
+    .main-img {
+        max-width: 70%;
+    }
 }
