@@ -14,7 +14,7 @@ import styles from './index.module.scss';
     <body>
         <Header />
         <main>
-            <section class="opening-section">
+            <section class="opening-section" style="display: flex; flex-direction: row; justify-content: space-between;">
                 <div class="opening-text-contener">
                     <h1>Adoptuj <span class="highlight">zwierzaka</span></h1>
                     <p class="opening-description">
@@ -25,13 +25,9 @@ import styles from './index.module.scss';
                     </p>
                     <a class={styles.button} href="/dog">Zobacz wszystkich podopiecznych</a>
                 </div>
-                <img
-                    alt="Main Page Cat"
-                    class="main-img"
-                    height="400px"
-                    src="src/assets/images/mainPageImg.png"
-                    width="400px"
-                />
+                <div class="main-page-cat-contener">
+                    <img alt="Main Page Cat" class="main-img" src="src/assets/images/mainPageImg.png"/>
+                </div>
             </section>
         </main>
         <Footer />

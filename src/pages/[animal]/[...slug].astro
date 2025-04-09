@@ -1,0 +1,37 @@
+---
+import createPlugin from '@astrojs/sitemap';
+import { type CollectionEntry, getCollection } from 'astro:content';
+
+const { animal } = Astro.params;
+
+function getCollectionName(path) {
+    if (path === 'dog') {
+        return 'dogs';
+    }
+
+    if (path === 'cat') {
+        return 'cats';
+    }
+}
+
+const collectionName = getCollectionName(animal);
+
+// type Props = CollectionEntry<collectionName>;
+
+export async function getStaticPaths() {
+    const collectionNames = ['cats', 'dogs'];
+    const collections = await Promise.all(collectionNames.map((collectionName) => getCollection(collectionName)));
+    return collections.flat().map((post) => {
+        console.log(post);
+
+        return {
+            params: { animal: post.data.type + 's', slug: post.slug },
+            props: post,
+        };
+    });
+}
+
+const post = Astro.props;
+---
+
+<pre>{JSON.stringify(post, undefined, 4)}</pre>

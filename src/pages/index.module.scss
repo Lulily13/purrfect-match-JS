@@ -6,15 +6,31 @@ h1 > span {
 }
 
 .opening-section {
-
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 100px;
 }
 
 .opening-text-contener {
-    max-width: 30vw;
+    flex: 1;
 }
 
 .opening-description {
-    max-width: 25vw;
+}
+
+.main-page-cat-contener {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 50%;
+}
+
+.main-img {
+    width: 300px;
+    max-width: 300px;
+    height: auto;
 }
 
 .button {
@@ -34,33 +50,5 @@ h1 > span {
     &:hover {
         transform: scale(1.05);
         color: white;
-    }
-}
-
-.main-img {
-    display: block;
-    margin: 0 auto;
-    max-width: 100%;
-    position: relative;
-    z-index: 5;
-}
-
-@media (max-width: 768px) {
-    .opening-section {
-        flex-direction: column;
-        text-align: center;
-        max-width: 90vw;
-    }
-
-    .opening-text-contener {
-        max-width: 90%;
-    }
-
-    .button {
-        max-width: 80%;
-    }
-
-    .main-img {
-        max-width: 70%;
     }
 }
