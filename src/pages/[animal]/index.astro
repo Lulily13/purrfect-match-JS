@@ -11,20 +11,9 @@ export function getStaticPaths() {
     return [{ params: { animal: 'dog' } }, { params: { animal: 'cat' } }];
 }
 
-function getCollectionName(path) {
-    if (path === 'dog') {
-        return 'dog';
-    }
-
-    if (path === 'cat') {
-        return 'cat';
-    }
-
-    return ' ';
-}
 const { animal } = Astro.params;
 
-const collectionName = getCollectionName(animal);
+const collectionName = animal;
 
 const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/images/*.{jpeg,jpg,png,gif}');
 

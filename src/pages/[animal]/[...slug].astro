@@ -19,7 +19,7 @@ export async function getStaticPaths() {
     const collections = await Promise.all(collectionNames.map((collectionName) => getCollection(collectionName)));
     return collections.flat().map((post) => {
         return {
-            params: { animal: `${post.data.type}s`, slug: post.slug },
+            params: { animal: post.data.type, slug: post.slug },
             props: post,
         };
     });
