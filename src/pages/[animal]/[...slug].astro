@@ -6,16 +6,16 @@ import { getCollection } from 'astro:content';
 // function getCollectionName(path) {
 //     switch (path) {
 //         case 'cat':
-//             return 'cats';
+//             return 'cat';
 //         case 'dog':
-//             return 'dogs';
+//             return 'dog';
 //         default:
 //             throw new Error(`Unknown animal: ${path}`);
 //     }
 // }
 
 export async function getStaticPaths() {
-    const collectionNames = ['cats', 'dogs'];
+    const collectionNames = ['cat', 'dog'];
     const collections = await Promise.all(collectionNames.map((collectionName) => getCollection(collectionName)));
     return collections.flat().map((post) => {
         return {
