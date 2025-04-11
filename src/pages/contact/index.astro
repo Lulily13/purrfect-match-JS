@@ -4,10 +4,10 @@ import BaseHead from '../../components/BaseHead.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../../consts';
 import Footer from '../../components/Footer.astro';
 
-const handleSubmit = (event) => {
-    event.preventDefault();
-    alert('Wiadomość wysłana!');
-};
+// const handleSubmit = (event) => {
+//     event.preventDefault();
+//     alert('Wiadomość wysłana!');
+// };
 ---
 
 <!doctype html>
@@ -20,24 +20,24 @@ const handleSubmit = (event) => {
         <main>
             <section>
                 <h1>Skontaktuj się z nami!</h1>
-                <form class="contact-form" onSubmit={handleSubmit}>
+                <!-- <form class="contact-form" onSubmit={handleSubmit}>
                     <label for="name">Imię:</label>
-                    <input type="text" id="name" name="name" required />
+                    <input id="name" name="name" required type="text" />
 
                     <label for="surname">Nazwisko:</label>
-                    <input type="text" id="surname" name="surname" required />
+                    <input id="surname" name="surname" required type="text" />
 
                     <label for="phone">Numer telefonu:</label>
-                    <input type="text" id="phone" name="phone" required />
+                    <input id="phone" name="phone" required type="text" />
 
                     <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required />
+                    <input id="email" name="email" required type="email" />
 
                     <label for="message">Wiadomość:</label>
                     <textarea id="message" name="message" required></textarea>
 
                     <button type="submit">Wyślij</button>
-                </form>
+                </form> -->
             </section>
         </main>
         <Footer />
@@ -103,7 +103,6 @@ const handleSubmit = (event) => {
         }
     }
 
-    /* Dostosowanie do mniejszych ekranów */
     @media (max-width: 720px) {
         .contact-form {
             padding: 1.5rem;

@@ -7,31 +7,23 @@ import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../../consts';
 
-export function getStaticPaths() {
-    return [{ params: { animal: 'dog' } }, { params: { animal: 'cat' } }];
-}
+const { animal } = Astro.params;
 
 function getCollectionName(path) {
-    if (path === 'dog') {
-        return 'dogs';
-    }
+    if (path === 'dog') return 'dogs';
+    if (path === 'cat') return 'cats';
 
-    if (path === 'cat') {
-        return 'cats';
-    }
+    return '';
 }
-const { animal } = Astro.params;
 
 const collectionName = getCollectionName(animal);
 
 const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/images/*.{jpeg,jpg,png,gif}');
 
-const posts = (await getCollection(collectionName)).sort(
-    (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
-);
+const posts = (await getCollection(collectionName)).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 ---
 
-<!doctype html
+<!doctype html>
 <html lang="en">
     <head>
         <BaseHead description={SITE_DESCRIPTION} title={SITE_TITLE} />
@@ -46,7 +38,7 @@ const posts = (await getCollection(collectionName)).sort(
                             <li>
                                 <a href={`/${collectionName}/${post.slug}`}>
                                     {post.data.images?.length && (
-                                        <Image alt="" src={images[`/${post.data.images[0]}`]()} />
+                                        <Image alt="" src={images[`/src/assets/images/${post.data.images[0]}`]()} />
                                     )}
                                     <h2>{post.data.name}</h2>
                                 </a>
