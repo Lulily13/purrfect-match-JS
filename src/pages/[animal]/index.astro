@@ -19,6 +19,8 @@ function getCollectionName(path) {
     if (path === 'cat') {
         return 'cats';
     }
+
+    return ' ';
 }
 const { animal } = Astro.params;
 
@@ -26,12 +28,10 @@ const collectionName = getCollectionName(animal);
 
 const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/images/*.{jpeg,jpg,png,gif}');
 
-const posts = (await getCollection(collectionName)).sort(
-    (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
-);
+const posts = (await getCollection(collectionName)).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 ---
 
-<!doctype html
+<!doctype html>
 <html lang="en">
     <head>
         <BaseHead description={SITE_DESCRIPTION} title={SITE_TITLE} />
