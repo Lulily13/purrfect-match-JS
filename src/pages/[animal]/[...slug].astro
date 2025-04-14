@@ -1,7 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
 
-
 export async function getStaticPaths() {
     const collectionNames = ['cat', 'dog'];
     const collections = await Promise.all(collectionNames.map((collectionName) => getCollection(collectionName)));

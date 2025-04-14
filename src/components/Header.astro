@@ -10,18 +10,18 @@ import styles from './Header.module.scss';
             <a href="/">{SITE_TITLE}</a>
         </h2>
         <div className={styles.internalLinks}>
-            <HeaderLink href="/about" className={styles.link}>O nas</HeaderLink>
+            <HeaderLink className={styles.link} href="/about">O nas</HeaderLink>
 
             <div className={styles.dropdown}>
                 <button className={styles.dropdownToggle}>Podopieczni</button>
                 <div className={styles.dropdownMenu}>
-                    <a href="/dog" className={styles.link}>Psy</a>
-                    <a href="/cat" className={styles.link}>Koty</a>
+                    <a className={styles.link} href="/dog">Psy</a>
+                    <a className={styles.link} href="/cat">Koty</a>
                 </div>
             </div>
 
-            <HeaderLink href="/howToHelp" className={styles.link}>Jak pomóc?</HeaderLink>
-            <HeaderLink href="/contact" className={styles.link}>Kontakt</HeaderLink>
+            <HeaderLink className={styles.link} href="/howToHelp">Jak pomóc?</HeaderLink>
+            <HeaderLink className={styles.link} href="/contact">Kontakt</HeaderLink>
         </div>
     </nav>
 </header>
