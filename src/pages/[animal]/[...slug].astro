@@ -1,18 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
 
-// const { animal } = Astro.params;
-
-// function getCollectionName(path) {
-//     switch (path) {
-//         case 'cat':
-//             return 'cat';
-//         case 'dog':
-//             return 'dog';
-//         default:
-//             throw new Error(`Unknown animal: ${path}`);
-//     }
-// }
 
 export async function getStaticPaths() {
     const collectionNames = ['cat', 'dog'];
