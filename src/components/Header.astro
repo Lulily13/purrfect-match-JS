@@ -1,114 +1,27 @@
 ---
 import { SITE_TITLE } from '../consts';
 import HeaderLink from './HeaderLink.astro';
+import styles from './Header.module.scss';
 ---
 
-<header>
-    <nav>
-        <h2><a href="/">{SITE_TITLE}</a></h2>
-        <div class="internal-links">
-            <HeaderLink href="/about">O nas</HeaderLink>
+<header className={styles.header}>
+    <nav className={styles.nav}>
+        <h2 className={styles.title}>
+            <a href="/">{SITE_TITLE}</a>
+        </h2>
+        <div className={styles.internalLinks}>
+            <HeaderLink href="/about" className={styles.link}>O nas</HeaderLink>
 
-            <div class="dropdown">
-                <button class="dropdown-toggle">Podopieczni</button>
-                <div class="dropdown-menu">
-                    <a href="/dog">Psy</a>
-                    <a href="/cat">Koty</a>
+            <div className={styles.dropdown}>
+                <button className={styles.dropdownToggle}>Podopieczni</button>
+                <div className={styles.dropdownMenu}>
+                    <a href="/dog" className={styles.link}>Psy</a>
+                    <a href="/cat" className={styles.link}>Koty</a>
                 </div>
             </div>
 
-            <HeaderLink href="/howToHelp">Jak pomóc?</HeaderLink>
-            <HeaderLink href="/contact">Kontakt</HeaderLink>
+            <HeaderLink href="/howToHelp" className={styles.link}>Jak pomóc?</HeaderLink>
+            <HeaderLink href="/contact" className={styles.link}>Kontakt</HeaderLink>
         </div>
     </nav>
 </header>
-
-<style>
-    header {
-        margin: 0;
-        padding: 0 1em;
-        background: #f9b7a2;
-        box-shadow: 0 2px 8px rgba(var(--black), 5%);
-        width: 100%;
-        background-color: $primary;
-        top: 0;
-        left: 0;
-        position: sticky;
-    }
-
-    h2 {
-        margin: 0;
-        font-size: 1em;
-    }
-
-    h2 a,
-    h2 a.active {
-        text-decoration: none;
-    }
-
-    nav {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 0 3em;
-    }
-
-    .internal-links {
-        display: flex;
-        align-items: center;
-        gap: 1em;
-    }
-
-    nav a,
-    .dropdown-toggle {
-        padding: 1em 0.5em;
-        color: #4a4a4a;
-        border-bottom: 4px solid transparent;
-        text-decoration: none;
-        display: inline-block;
-        font: inherit;
-        background: none;
-        border: none;
-        cursor: pointer;
-    }
-
-    nav a.active,
-    .dropdown:hover .dropdown-toggle {
-        border-bottom-color: #4a4a4a;
-    }
-
-    .dropdown {
-        position: relative;
-    }
-
-    .dropdown-menu {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        background-color: white;
-        border: 1px solid #ccc;
-        z-index: 10;
-        min-width: 100%;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        padding: 0; /* removes default spacing */
-    }
-
-    .dropdown:hover .dropdown-menu {
-        display: block;
-    }
-
-    .dropdown-menu a {
-        display: block;
-        padding: 1em 0.5em;
-        color: #4a4a4a;
-        text-decoration: none;
-        transition: background-color 0.2s ease;
-    }
-
-    .dropdown-menu a:hover,
-    .dropdown-menu a.active {
-        border-bottom-color: #4a4a4a;
-        background-color: #f0f0f0;
-    }
-</style>
