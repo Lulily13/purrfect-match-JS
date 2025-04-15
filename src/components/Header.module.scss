@@ -1,9 +1,9 @@
-@use '../styles/global.module.scss' as global;
+@use '../styles/constants.scss' as constant;
 
 .header {
     margin: 0;
     padding: 3px;
-    background: global.$primary;
+    background: constant.$primary;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
     width: 100%;
     position: sticky;
@@ -23,10 +23,10 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0.5em 1em;
+    padding: 8px 30px;
     flex-wrap: wrap;
 
-    @media (max-width: global.$medium-breakpoint) {
+    @media (max-width: constant.$medium-breakpoint) {
         flex-direction: column;
         align-items: flex-start;
         gap: 0.5em;
@@ -38,7 +38,7 @@
     align-items: center;
     gap: 1em;
 
-    @media (max-width: global.$medium-breakpoint) {
+    @media (max-width: constant.$medium-breakpoint) {
         flex-direction: column;
         align-items: flex-start;
         width: 100%;
@@ -59,7 +59,7 @@
     border: none;
     cursor: pointer;
 
-    @media (max-width: global.$medium-breakpoint) {
+    @media (max-width: constant.$medium-breakpoint) {
         width: 100%;
         padding: 0.5em;
     }
@@ -72,7 +72,7 @@
 .dropdown {
     position: relative;
 
-    @media (max-width: global.$medium-breakpoint) {
+    @media (max-width: constant.$medium-breakpoint) {
         width: 100%;
         position: relative;
     }
@@ -95,12 +95,12 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     padding: 0;
 
-    @media (max-width: global.$medium-breakpoint) {
+    @media (max-width: constant.$medium-breakpoint) {
         position: static;
         box-shadow: none;
         border: none;
         width: 100%;
-        background-color: global.$primary;
+        background-color: constant.$primary;
         font-weight: 800;
     }
 }

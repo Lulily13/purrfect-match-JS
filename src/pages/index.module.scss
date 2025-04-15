@@ -1,7 +1,7 @@
-@use '../styles/global.module.scss' as global;
+@use '../styles/constants.scss' as constant;
 
 h1 > span {
-    color: global.$secondary;
+    color: constant.$secondary;
 }
 
 .opening-section {
@@ -34,7 +34,7 @@ h1 > span {
     text-decoration: none;
     color: white;
     font-weight: 600;
-    background: global.$secondary;
+    background: constant.$secondary;
     padding: 15px 25px;
     border-radius: 40px;
     box-shadow: 5px 10px 14px rgba(7, 172, 230, 0.2);
