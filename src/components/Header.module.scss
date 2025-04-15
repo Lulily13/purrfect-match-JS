@@ -1,37 +1,50 @@
-$primary: #f9b7a2;
+@use '../styles/global.module.scss' as global;
 
 .header {
     margin: 0;
-    padding: 0 1em;
-    background: $primary;
-    box-shadow: 0 2px 8px rgba(var(--black), 5%);
+    padding: 3px;
+    background: global.$primary;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
     width: 100%;
+    position: sticky;
     top: 0;
     left: 0;
-    position: sticky;
+    z-index: 100;
 }
 
 .title {
-    margin: 0;
-    font-size: 1em;
-}
-
-.title a,
-.title a.active {
     text-decoration: none;
+    margin: 0;
+    font-size: 1.2em;
+    color: #4a4a4a;
 }
 
 .nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 3em;
+    padding: 0.5em 1em;
+    flex-wrap: wrap;
+
+    @media (max-width: global.$medium-breakpoint) {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5em;
+    }
 }
 
 .internalLinks {
     display: flex;
     align-items: center;
     gap: 1em;
+
+    @media (max-width: global.$medium-breakpoint) {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        padding-top: 0.5em;
+        gap: 0.3em;
+    }
 }
 
 .link,
@@ -45,15 +58,29 @@ $primary: #f9b7a2;
     background: none;
     border: none;
     cursor: pointer;
+
+    @media (max-width: global.$medium-breakpoint) {
+        width: 100%;
+        padding: 0.5em;
+    }
 }
 
-.link.active,
-.dropdown:hover .dropdownToggle {
+.link.active {
     border-bottom-color: #4a4a4a;
 }
 
 .dropdown {
     position: relative;
+
+    @media (max-width: global.$medium-breakpoint) {
+        width: 100%;
+        position: relative;
+    }
+
+    &:hover .dropdownMenu,
+    &:focus-within .dropdownMenu {
+        display: block;
+    }
 }
 
 .dropdownMenu {
@@ -67,22 +94,13 @@ $primary: #f9b7a2;
     min-width: 100%;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     padding: 0;
-}
 
-.dropdown:hover .dropdownMenu {
-    display: block;
-}
-
-.dropdownMenu a {
-    display: block;
-    padding: 1em 0.5em;
-    color: #4a4a4a;
-    text-decoration: none;
-    transition: background-color 0.2s ease;
-}
-
-.dropdownMenu a:hover,
-.dropdownMenu a.active {
-    border-bottom-color: #4a4a4a;
-    background-color: #f0f0f0;
+    @media (max-width: global.$medium-breakpoint) {
+        position: static;
+        box-shadow: none;
+        border: none;
+        width: 100%;
+        background-color: global.$primary;
+        font-weight: 800;
+    }
 }

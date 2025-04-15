@@ -6,20 +6,16 @@ import styles from './Header.module.scss';
 
 <header className={styles.header}>
     <nav className={styles.nav}>
-        <h2 className={styles.title}>
-            <a href="/">{SITE_TITLE}</a>
-        </h2>
+        <a className={styles.title} href="/">{SITE_TITLE}</a>
         <div className={styles.internalLinks}>
             <HeaderLink className={styles.link} href="/about">O nas</HeaderLink>
-
             <div className={styles.dropdown}>
-                <button className={styles.dropdownToggle}>Podopieczni</button>
+                <div className={styles.dropdownToggle}>Podopieczni</div>
                 <div className={styles.dropdownMenu}>
                     <a className={styles.link} href="/dog">Psy</a>
                     <a className={styles.link} href="/cat">Koty</a>
                 </div>
             </div>
-
             <HeaderLink className={styles.link} href="/howToHelp">Jak pomóc?</HeaderLink>
             <HeaderLink className={styles.link} href="/contact">Kontakt</HeaderLink>
         </div>
