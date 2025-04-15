@@ -1,0 +1,106 @@
+@use '../styles/constants.scss' as constant;
+
+.header {
+    margin: 0;
+    padding: 3px;
+    background: constant.$primary;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+.title {
+    text-decoration: none;
+    margin: 0;
+    font-size: 1.2em;
+    color: #4a4a4a;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 30px;
+    flex-wrap: wrap;
+
+    @media (max-width: constant.$medium-breakpoint) {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5em;
+    }
+}
+
+.internalLinks {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+
+    @media (max-width: constant.$medium-breakpoint) {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        padding-top: 0.5em;
+        gap: 0.3em;
+    }
+}
+
+.link,
+.dropdownToggle {
+    padding: 1em 0.5em;
+    color: #4a4a4a;
+    border-bottom: 4px solid transparent;
+    text-decoration: none;
+    display: inline-block;
+    font: inherit;
+    background: none;
+    border: none;
+    cursor: pointer;
+
+    @media (max-width: constant.$medium-breakpoint) {
+        width: 100%;
+        padding: 0.5em;
+    }
+}
+
+.link.active {
+    border-bottom-color: #4a4a4a;
+}
+
+.dropdown {
+    position: relative;
+
+    @media (max-width: constant.$medium-breakpoint) {
+        width: 100%;
+        position: relative;
+    }
+
+    &:hover .dropdownMenu,
+    &:focus-within .dropdownMenu {
+        display: block;
+    }
+}
+
+.dropdownMenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    border: 1px solid #ccc;
+    z-index: 10;
+    min-width: 100%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 0;
+
+    @media (max-width: constant.$medium-breakpoint) {
+        position: static;
+        box-shadow: none;
+        border: none;
+        width: 100%;
+        background-color: constant.$primary;
+        font-weight: 800;
+    }
+}

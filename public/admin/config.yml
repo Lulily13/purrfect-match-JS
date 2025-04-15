@@ -12,7 +12,7 @@ collections:
       - { label: "Body", name: "body", widget: "markdown" }
   - name: 'cat'
     label: 'Cats'
-    folder: 'src/content/cats'
+    folder: 'src/content/cat'
     create: true
     identifier_field: 'name'
     fields:
@@ -25,6 +25,69 @@ collections:
         name: 'type'
         widget: 'hidden'
         default: 'cat'
+      - label: "Publish Date"
+        name: "date"
+        widget: "datetime"
+        default: '{{now}}'
+      - label: 'Age'
+        required: false
+        name: 'age'
+        widget: 'number'
+      - label: 'Size'
+        required: false
+        name: 'size'
+        widget: 'select'
+        options:
+          - { label: 'Small', value: 'small' }
+          - { label: 'Medium', value: 'medium' }
+          - { label: 'Large', value: 'large' }
+      - label: 'Images'
+        required: false
+        name: "images"
+        widget: "image"
+        choose_url: true
+        media_library:
+          config:
+            multiple: true
+      - label: "Personality Traits"
+        required: false
+        name: "personality_traits"
+        widget: "relation"
+        multiple: true
+        collection: "personality_traits"
+        search_fields: ["name"]
+        value_field: "name"
+      - label: "Health Status"
+        required: false
+        name: "health_status"
+        widget: "relation"
+        multiple: true
+        collection: "health_status"
+        search_fields: ["name"]
+        value_field: "name"
+      - label: 'Breed'
+        required: false
+        name: 'breed'
+        widget: 'string'
+      - label: 'Bio'
+        required: false
+        name: 'bio'
+        widget: 'markdown'
+  - name: 'dog'
+    label: 'Dogs'
+    folder: 'src/content/dog'
+    create: true
+    identifier_field: 'name'
+    fields:
+      - label: 'Name'
+        required: true
+        name: 'name'
+        widget: 'string'
+      - label: 'Type'
+        required: true
+        name: 'type'
+        widget: 'hidden'
+        default: 'dog'
       - label: "Publish Date"
         name: "date"
         widget: "datetime"

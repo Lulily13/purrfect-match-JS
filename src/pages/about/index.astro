@@ -1,0 +1,57 @@
+---
+import Header from '../../components/Header.astro';
+import BaseHead from '../../components/BaseHead.astro';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../../consts';
+import Footer from '../../components/Footer.astro';
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <BaseHead description={SITE_DESCRIPTION} title={SITE_TITLE} />
+    </head>
+    <body>
+        <Header />
+        <main>
+            <h1>O nas</h1>
+
+            <section>
+                <h2>Kim jesteśmy?</h2>
+                <p>
+                    Jesteśmy grupą miłośników zwierząt, którzy postanowili stworzyć dom tymczasowy dla czworonogów w
+                    potrzebie. Naszą misją jest zapewnienie bezpiecznego schronienia, leczenia i opieki dla porzuconych
+                    oraz bezdomnych zwierząt, dopóki nie znajdą swojego stałego domu.
+                </p>
+            </section>
+
+            <section>
+                <h2>Nasza misja</h2>
+                <p>
+                    Naszym celem jest nie tylko ratowanie zwierząt, ale także edukowanie społeczeństwa na temat
+                    odpowiedzialnej opieki nad nimi. Współpracujemy z lekarzami weterynarii, wolontariuszami i
+                    darczyńcami, aby zapewnić zwierzętom jak najlepsze warunki.
+                </p>
+            </section>
+
+            <section>
+                <h2>Co robimy?</h2>
+                <ul>
+                    <li>Przyjmujemy zwierzęta w potrzebie</li>
+                    <li>Zapewniamy leczenie i opiekę weterynaryjną</li>
+                    <li>Pomagamy w adopcji i znalezieniu odpowiedzialnych opiekunów</li>
+                    <li>Organizujemy zbiórki i kampanie społeczne</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Zainteresowany pomocą?</h2>
+                <p>
+                    Jeśli chcesz dowiedzieć się więcej o naszej działalności, adoptować zwierzaka lub pomóc w inny
+                    sposób, kliknij poniższy przycisk:
+                </p>
+                <a href="/contact">Skontaktuj się z nami</a>
+            </section>
+        </main>
+        <Footer />
+    </body>
+</html>

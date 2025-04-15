@@ -30,7 +30,6 @@ Inside of your Astro project, you'll see the following folders and files:
 ├── src/
 │   ├── components/
 │   ├── content/
-│   ├── layouts/
 │   └── pages/
 ├── astro.config.mjs
 ├── README.md
