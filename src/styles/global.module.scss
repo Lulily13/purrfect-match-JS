@@ -39,7 +39,7 @@ h4,
 h5,
 h6 {
 	margin: 0 0 0.5rem 0;
-	color: rgb(var(--black));
+	color: black;
 	line-height: 1.2;
 }
 h1 {
@@ -62,10 +62,10 @@ b {
 	font-weight: 700;
 }
 a {
-	color: var(--accent);
+	color: black;
 }
 a:hover {
-	color: var(--accent);
+	color: black;
 }
 p {
 	margin-bottom: 1em;
@@ -89,7 +89,7 @@ img {
 }
 code {
 	padding: 2px 5px;
-	background-color: rgb(var(--gray-light));
+	background-color: grey;
 	border-radius: 2px;
 }
 pre {
@@ -101,7 +101,7 @@ pre > code {
 }
 hr {
 	border: none;
-	border-top: 1px solid rgb(var(--gray-light));
+	border-top: 1px solid grey;
 }
 @media (max-width: 720px) {
 	body {
