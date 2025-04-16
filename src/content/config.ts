@@ -1,16 +1,16 @@
 import { defineCollection, z } from 'astro:content';
 
-const blog = defineCollection({
-    // Type-check frontmatter using a schema
+const staticCollection = defineCollection({
     schema: z.object({
-        description: z.string(),
-        heroImage: z.string().optional(),
-        // Transform string to Date object
-        pubDate: z.coerce.date(),
-        title: z.string(),
-        updatedDate: z.coerce.date().optional(),
+        facebook: z.string().url().optional(),
+        image: z.string().optional(),
+        linkedIn: z.string().url().optional(),
+        name: z.literal('footer'),
+        twitter: z.string().url().optional(),
     }),
     type: 'content',
 });
 
-export const collections = { blog };
+export const collections = {
+    static: staticCollection,
+};
