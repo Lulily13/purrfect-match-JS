@@ -162,9 +162,9 @@ collections:
         name: "footer"
         file: "src/content/static/footer.md"
         fields:
-          - { label: "LinkedIn", name: "linkedIn", widget: "string", hint: "Url to LinkedIn page, leave empty to skip", required: false }
-          - { label: "Facebook", name: "facebook", widget: "string", hint: "Url to Facebook page, leave empty to skip", required: false }
-          - { label: "Twitter", name: "twitter", widget: "string", hint: "Url to Twitter page, leave empty to skip", required: false }
+          - { label: "Instagram", name: "instagram", widget: "string", hint: "Url to Instagram page, leave empty to skip", required: false, pattern: ['^https://', 'Url must start with https'] }
+          - { label: "Facebook", name: "facebook", widget: "string", hint: "Url to Facebook page, leave empty to skip", required: false, pattern: ['^https://', 'Url must start with https'] }
+          - { label: "Twitter", name: "twitter", widget: "string", hint: "Url to Twitter page, leave empty to skip", required: false, pattern: ['^https://', 'Url must start with https'] }
           - { label: "Image", name: "image", widget: "image", hint: "Image to display in footer, leave empty to skip", required: false, choose_url: true }
           - { label: "Body", name: "body", widget: "markdown" }
 media_folder: "src/assets/images" # Location where files will be stored in the repo

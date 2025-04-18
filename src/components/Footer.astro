@@ -1,32 +1,54 @@
 ---
+import { getEntry } from 'astro:content';
 
+const entry = await getEntry('static', 'footer');
+
+if (!entry) {
+    throw new Error('Could not load footer.md');
+}
+
+const { Content } = await entry.render();
+const { data } = entry;
 ---
 
 <footer>
-    <div class="footer-content-container">
-        <div class="footer-social-links">
-            <i aria-label="Facebook" class="fab fa-facebook-f"></i>
-            <i aria-label="Instagram" class="fab fa-instagram"></i>
+    <div>
+        {data.image && <img alt="Footer logo" height="80" loading="lazy" src={data.image} width="200" />}
+
+        <div class="social-links">
+            <ul>
+                {
+                    data.linkedIn && (
+                        <li>
+                            <a href={data.linkedIn} target="_blank">
+                                LinkedIn
+                            </a>
+                        </li>
+                    )
+                }
+                {
+                    data.facebook && (
+                        <li>
+                            <a href={data.facebook} target="_blank">
+                                Facebook
+                            </a>
+                        </li>
+                    )
+                }
+                {
+                    data.twitter && (
+                        <li>
+                            <a href={data.twitter} target="_blank">
+                                Twitter
+                            </a>
+                        </li>
+                    )
+                }
+            </ul>
         </div>
 
-        <button class="footer-contact-button">Skontaktuj się</button>
-
-        <p class="footer-email">
-            Email: <a href="mailto:info@shelter.com">info@shelter.com</a>
-        </p>
-        <p class="footer-phone">
-            Phone: <a href="tel:+485555678901">555-567-8901</a>
-        </p>
-        <p class="footer-address">Address: Rondo Mogilskie 66, 31-221 Kraków</p>
-
-        <div class="footer-img-container">
-            <!-- Insert image here -->
-        </div>
-
-        <p>&copy; 2025 Purrfect Match. All Rights Reserved.</p>
-
-        <div class="privacy-policy">
-            <a href="/polityka-prywatnosci">Polityka prywatności</a>
+        <div class="footer-body">
+            <Content />
         </div>
     </div>
 </footer>
