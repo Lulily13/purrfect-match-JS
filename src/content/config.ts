@@ -2,11 +2,11 @@ import { defineCollection, z } from 'astro:content';
 
 const staticCollection = defineCollection({
     schema: z.object({
-        facebook: z.string().url().optional(),
+        facebook: z.string().optional(),
         image: z.string().optional(),
-        linkedIn: z.string().url().optional(),
+        instagram: z.string().optional(),
         name: z.literal('footer'),
-        twitter: z.string().url().optional(),
+        twitter: z.string().optional(),
     }),
     type: 'content',
 });
