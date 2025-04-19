@@ -33,6 +33,10 @@ jobs:
         runs-on: [ubuntu-latest]
         timeout-minutes: 15
         needs: [validate_pr_title, validate]
+        permissions:
+            ontents: write
+        concurrency:
+            group: gh-pages
         steps:
             - name: Checkout
               uses: actions/checkout@v4
