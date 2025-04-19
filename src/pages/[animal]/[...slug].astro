@@ -1,9 +1,12 @@
 ---
 import { getCollection } from 'astro:content';
+import { COLLECTIONS, type CollectionsType } from '../../constants/collections';
 
 export async function getStaticPaths() {
-    const collectionNames = ['cat', 'dog'];
-    const collections = await Promise.all(collectionNames.map((collectionName) => getCollection(collectionName)));
+    const collections = await Promise.all(
+        COLLECTIONS.map((collectionName: string) => getCollection(collectionName as CollectionsType))
+    );
+
     return collections.flat().map((post) => {
         return {
             params: { animal: post.data.type, slug: post.slug },
