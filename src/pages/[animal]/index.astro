@@ -6,14 +6,15 @@ import BaseHead from '../../components/BaseHead.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../../consts';
+import { COLLECTIONS, type CollectionsType } from '../../constants/collections';
 
 export function getStaticPaths() {
-    return [{ params: { animal: 'dog' } }, { params: { animal: 'cat' } }];
+    return COLLECTIONS.map((animal) => ({ params: { animal } }));
 }
 
 const { animal } = Astro.params;
 
-const collectionName = animal;
+const collectionName: CollectionsType = animal as CollectionsType;
 
 const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/images/*.{jpeg,jpg,png,gif}');
 

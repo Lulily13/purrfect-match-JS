@@ -4,20 +4,20 @@ import HeaderLink from './HeaderLink.astro';
 import styles from './Header.module.scss';
 ---
 
-<header className={styles.header}>
-    <nav className={styles.nav}>
-        <a className={styles.title} href="/">{SITE_TITLE}</a>
-        <div className={styles.internalLinks}>
-            <HeaderLink className={styles.link} href="/about">O nas</HeaderLink>
-            <div className={styles.dropdown}>
-                <div className={styles.dropdownToggle}>Podopieczni</div>
-                <div className={styles.dropdownMenu}>
-                    <a className={styles.link} href="/dog">Psy</a>
-                    <a className={styles.link} href="/cat">Koty</a>
+<header class={styles.header}>
+    <nav class={styles.nav}>
+        <a class={styles.title} href="/">{SITE_TITLE}</a>
+        <div class={styles.internalLinks}>
+            <HeaderLink class={styles.link} href="/about">O nas</HeaderLink>
+            <div class={styles.dropdown}>
+                <div class={styles.dropdownToggle}>Podopieczni</div>
+                <div class={styles.dropdownMenu}>
+                    <a class={styles.link} href="/dog">Psy</a>
+                    <a class={styles.link} href="/cat">Koty</a>
                 </div>
             </div>
-            <HeaderLink className={styles.link} href="/howToHelp">Jak pomóc?</HeaderLink>
-            <HeaderLink className={styles.link} href="/contact">Kontakt</HeaderLink>
+            <HeaderLink class={styles.link} href="/howToHelp">Jak pomóc?</HeaderLink>
+            <HeaderLink class={styles.link} href="/contact">Kontakt</HeaderLink>
         </div>
     </nav>
 </header>
