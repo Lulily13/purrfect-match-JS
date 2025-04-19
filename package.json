@@ -7,7 +7,7 @@
         "dev:astro": "astro dev",
         "dev:decap": "decap-server",
         "start": "astro dev",
-        "build": "rimraf dist && astro check && astro build",
+        "build": "rimraf dist && astro check && astro build && rimraf dist/admin",
         "preview": "astro preview",
         "astro": "astro",
         "lint": "eslint .",
