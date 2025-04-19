@@ -27,3 +27,27 @@ jobs:
     validate:
         name: Validate
         uses: ./.github/workflows/validate.yml
+    
+    ghPages:
+        name: Deploy to GitHub Pages
+        runs-on: [ubuntu-latest]
+        timeout-minutes: 15
+        needs: [validate_pr_title, validate]
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v4
+            - name: Set correct node version
+              uses: actions/setup-node@v4
+              with:
+                node-version-file: package.json
+                cache: 'npm'
+            - name: Install dependencies
+              run: npm ci --quiet --no-audit --no-fund
+              shell: bash
+            - name: Build
+              run: npm run build
+            - name: Deploy to GitHub Pages
+              uses: peaceiris/actions-gh-pages@v3
+              with:
+                github_token: ${{ secrets.GITHUB_TOKEN }}
+                publish_dir: ./dist
